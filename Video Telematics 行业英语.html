@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video Telematics 行业英语 · 词汇 / 短语 / 搭配</title>
+<style>
+  :root{
+    --brand:#6366F1; --brand-light:#EEF2FF; --brand-dark:#4F46E5;
+    --bg:#F8F9FC; --surface-2:#F0F2F7; --chrome:#EDEEF3;
+    --border:#E2E5EE; --text:#0F1624; --text-2:#4B5269; --muted:#8890A8;
+    --success:#0B7B52; --success-bg:#E6F5EF;
+    --warning:#92600A; --warning-bg:#FEF3E2;
+    --header:#2C3344;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:76px}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Helvetica Neue",Arial,sans-serif;
+    font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  button{font:inherit;color:inherit;cursor:pointer}
+  button:focus-visible,input:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--header);color:#fff;padding:32px 24px 28px}
+  .hero-in{max-width:1280px;margin:0 auto}
+  .hero h1{margin:0;font-size:26px;font-weight:700;letter-spacing:.01em}
+  .hero .sub{margin:6px 0 0;color:rgba(255,255,255,.62);font-size:14px}
+  .stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .stat{background:rgba(255,255,255,.08);border-radius:10px;padding:10px 14px;min-width:112px}
+  .stat b{display:block;font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
+  .stat span{font-size:12px;color:rgba(255,255,255,.6)}
+  .progress{flex:1 1 260px;min-width:240px}
+  .bar{height:6px;border-radius:6px;background:rgba(255,255,255,.14);margin-top:8px;overflow:hidden}
+  .bar i{display:block;height:100%;width:0;background:#A5B4FC;border-radius:6px;transition:width .3s}
+  .tips{margin:20px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px}
+  .tips li{background:rgba(255,255,255,.06);border-radius:10px;padding:10px 12px;font-size:12.5px;color:rgba(255,255,255,.78)}
+  .tips li b{color:#fff;font-weight:600}
+
+  /* ---------- Toolbar ---------- */
+  .toolbar{position:sticky;top:0;z-index:20;background:rgba(248,249,252,.94);backdrop-filter:blur(8px);
+    box-shadow:0 1px 0 var(--border)}
+  .toolbar-in{max-width:1280px;margin:0 auto;padding:10px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+  .search{position:relative;flex:0 1 260px}
+  .search input{width:100%;height:34px;border:1px solid var(--border);border-radius:8px;background:#fff;
+    padding:0 30px 0 32px;font-size:13px;color:var(--text)}
+  .search svg{position:absolute;left:10px;top:9px;color:var(--muted)}
+  .search kbd{position:absolute;right:8px;top:8px;font:11px/16px ui-monospace,Menlo,monospace;color:var(--muted);
+    border:1px solid var(--border);border-radius:4px;padding:0 4px;background:var(--bg)}
+  .seg{display:inline-flex;background:var(--chrome);border-radius:8px;padding:2px}
+  .seg button{border:0;background:transparent;height:30px;padding:0 10px;border-radius:6px;font-size:12.5px;color:var(--text-2)}
+  .seg button[aria-pressed="true"]{background:#fff;color:var(--brand);font-weight:600;box-shadow:0 1px 2px rgba(15,22,36,.08)}
+  .lbl{font-size:12px;color:var(--muted);margin-right:-4px}
+  .chk{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 10px;border:1px solid var(--border);
+    border-radius:8px;background:#fff;font-size:12.5px;color:var(--text-2);user-select:none}
+  .chk[aria-pressed="true"]{border-color:var(--brand);color:var(--brand);background:var(--brand-light);font-weight:600}
+  .spacer{flex:1}
+  .result{font-size:12px;color:var(--muted)}
+
+  /* ---------- Layout ---------- */
+  .layout{max-width:1280px;margin:0 auto;padding:24px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px}
+  .toc{position:sticky;top:76px;align-self:start;max-height:calc(100vh - 96px);overflow:auto;font-size:13px}
+  .toc a{display:flex;justify-content:space-between;gap:8px;color:var(--text-2);text-decoration:none;padding:5px 10px;border-radius:8px}
+  .toc a:hover{background:var(--chrome);color:var(--text)}
+  .toc a.part{font-weight:600;color:var(--text);margin-top:12px}
+  .toc a.part:first-child{margin-top:0}
+  .toc a.subl{padding-left:20px;font-size:12.5px}
+  .toc a .n{color:var(--muted);font-variant-numeric:tabular-nums;font-size:12px}
+  .toc a.dim{opacity:.35}
+
+  .part{margin-bottom:36px}
+  .part-h{display:flex;align-items:baseline;gap:12px;margin:0 0 4px}
+  .part-h .idx{font:600 13px/1 ui-monospace,Menlo,monospace;color:var(--brand);background:var(--brand-light);
+    padding:5px 8px;border-radius:6px}
+  .part-h h2{margin:0;font-size:22px}
+  .part-h .en-t{color:var(--muted);font-size:14px}
+  .part-desc{margin:4px 0 16px;color:var(--text-2);font-size:13px}
+  .sub{margin-bottom:24px}
+  .sub h3{margin:0 0 10px;font-size:15px;display:flex;align-items:baseline;gap:8px}
+  .sub h3 small{font-weight:400;color:var(--muted);font-size:12.5px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:12px}
+
+  /* ---------- Card ---------- */
+  .card{background:#fff;border-radius:10px;padding:14px 16px 12px;box-shadow:0 1px 2px rgba(15,22,36,.05);
+    display:flex;flex-direction:column;gap:6px;position:relative;transition:background .2s}
+  .card.done{background:#FBFCFE}
+  .card.done .w{color:var(--success)}
+  .head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding-right:28px}
+  .w{font-size:17px;font-weight:700;letter-spacing:.005em}
+  .ipa{font-family:"Lucida Grande","Lucida Sans Unicode","Segoe UI",Arial,sans-serif;font-size:13px;color:var(--text-2)}
+  .pos{font-size:11px;color:var(--muted);background:var(--surface-2);border-radius:4px;padding:1px 6px}
+  .core-b{font-size:11px;color:var(--warning);background:var(--warning-bg);border-radius:4px;padding:1px 6px;font-weight:600}
+  .mean{font-size:14px;color:var(--text);font-weight:500}
+  .ex{display:flex;gap:6px;align-items:flex-start;background:var(--bg);border-radius:8px;padding:8px 10px 8px 6px;margin-top:2px}
+  .ex-body{flex:1;min-width:0}
+  .ex-en{margin:0;font-size:13.5px;color:var(--text)}
+  .ex-zh{margin:2px 0 0;font-size:12.5px;color:var(--text-2)}
+  .note{margin:0;font-size:12px;color:var(--text-2);background:var(--brand-light);border-radius:8px;padding:6px 10px}
+  .note::before{content:"提示 ";font-weight:600;color:var(--brand)}
+
+  .spk{border:0;background:transparent;width:26px;height:26px;border-radius:6px;display:inline-flex;align-items:center;
+    justify-content:center;color:var(--brand);flex:none}
+  .spk:hover{background:var(--brand-light)}
+  .spk.on{background:var(--brand);color:#fff}
+  .mk{position:absolute;top:10px;right:10px;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--border);
+    background:#fff;color:transparent;display:inline-flex;align-items:center;justify-content:center}
+  .mk:hover{border-color:var(--success);color:var(--success)}
+  .card.done .mk{background:var(--success);border-color:var(--success);color:#fff}
+
+  /* ---------- Self-test blur ---------- */
+  body[data-mode="hide-zh"] .zh:not(.rv),
+  body[data-mode="hide-en"] .en:not(.rv){filter:blur(6px);cursor:pointer;user-select:none;transition:filter .15s}
+  body[data-mode="hide-zh"] .zh:not(.rv):hover,
+  body[data-mode="hide-en"] .en:not(.rv):hover{filter:blur(4px)}
+
+  .empty{display:none;text-align:center;color:var(--muted);padding:60px 0;font-size:14px}
+  .empty.show{display:block}
+  .foot{color:var(--muted);font-size:12px;text-align:center;padding:12px 0 40px}
+
+  #toast{position:fixed;right:24px;bottom:24px;z-index:9999;background:var(--header);color:#fff;font-size:13px;
+    padding:10px 14px;border-radius:10px;opacity:0;transform:translateY(8px);transition:all .2s;pointer-events:none}
+  #toast.show{opacity:1;transform:none}
+
+  @media (max-width:980px){
+    .layout{grid-template-columns:1fr}
+    .toc{display:none}
+    .grid{grid-template-columns:1fr}
+  }
+  /* ---------- Mobile ---------- */
+  @media (max-width:720px){
+    html{scroll-padding-top:214px}
+    body{font-size:15px;line-height:1.6}
+    .hero{padding:22px 16px 20px}
+    .hero h1{font-size:23px;line-height:1.25}
+    .hero .sub{font-size:13px;line-height:1.6}
+    .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:16px}
+    .stat{min-width:0;padding:9px 10px;border-radius:8px}
+    .stat b{font-size:18px}
+    .progress{grid-column:1 / -1;min-width:0}
+    .tips{grid-template-columns:1fr;gap:7px;margin-top:16px}
+    .tips li{font-size:12.5px;padding:9px 10px}
+
+    .toolbar-in{padding:9px 12px;gap:8px;align-items:stretch}
+    .search{flex:1 0 100%}
+    .search input{height:40px;font-size:14px}
+    .search svg{top:13px}
+    .search kbd{top:11px}
+    .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+    .seg{min-width:0}
+    #mode{flex:1 0 100%}
+    #accent,#rate{flex:1 1 calc(50% - 4px)}
+    .seg button{flex:1;min-width:0;height:36px;padding:0 7px;font-size:12px;white-space:nowrap}
+    .chk{flex:1 1 calc(33.333% - 6px);justify-content:center;height:38px;padding:0 7px;font-size:12px;white-space:nowrap}
+    .spacer{display:none}
+    .result{flex:1 0 100%;text-align:right;padding:0 2px;font-size:12px}
+
+    .layout{padding:18px 12px;gap:0}
+    .part{margin-bottom:30px;scroll-margin-top:220px}
+    .part-h{align-items:flex-start;gap:8px;flex-wrap:wrap}
+    .part-h .idx{margin-top:3px}
+    .part-h h2{font-size:20px;line-height:1.35}
+    .part-h .en-t{font-size:13px;margin-left:38px;margin-top:-7px;flex-basis:calc(100% - 38px)}
+    .part-desc{font-size:13px;margin:6px 0 14px}
+    .sub{margin-bottom:20px;scroll-margin-top:220px}
+    .sub h3{font-size:16px;line-height:1.4;flex-wrap:wrap;gap:3px 8px}
+    .sub h3 small{font-size:12px}
+    .grid{gap:10px}
+    .card{padding:13px 14px 12px;border-radius:10px;gap:7px}
+    .head{gap:6px;padding-right:30px}
+    .w{font-size:16px;overflow-wrap:anywhere}
+    .ipa{font-size:12px;overflow-wrap:anywhere}
+    .mean{font-size:14px}
+    .ex{padding:9px 9px 9px 5px;gap:5px}
+    .ex-en{font-size:13px;line-height:1.55}
+    .ex-zh{font-size:12.5px;line-height:1.55}
+    .note{font-size:12px;line-height:1.55}
+    .spk{width:32px;height:32px}
+    .mk{width:32px;height:32px;top:9px;right:9px}
+    .foot{padding:6px 4px 26px;font-size:11.5px}
+    #toast{left:16px;right:16px;bottom:16px;text-align:center;padding:10px 12px}
+  }
+  @media (max-width:380px){
+    .hero h1{font-size:21px}
+    .seg button{padding:0 5px;font-size:11.5px}
+    .chk{font-size:11.5px}
+    .part-h h2{font-size:19px}
+  }
+  @media print{
+    .toolbar,.toc,.spk,.mk,#toast{display:none!important}
+    .hero{background:#fff;color:var(--text);padding:0 0 12px}
+    .hero .sub,.stat span,.tips li{color:var(--text-2)}
+    .stat,.tips li{background:var(--surface-2)}
+    .layout{display:block;padding:0}
+    .card{box-shadow:none;border:1px solid var(--border);break-inside:avoid}
+    .zh,.en{filter:none!important}
+    [hidden]{display:none!important}
+  }
+</style>
+</head>
+<body data-mode="all">
+
+<header class="hero">
+  <div class="hero-in">
+    <h1>Video Telematics 行业英语</h1>
+    <p class="sub">写给和海外客户打交道的产品经理：必备词汇、常用短语、高频搭配，每条都配例句和中文翻译</p>
+    <div class="stats" id="stats"></div>
+    <ul class="tips">
+      <li><b>① 先学「必背」</b>：打开工具栏的「只看必背」开关，先把最常用的那部分吃透。</li>
+      <li><b>② 跟读</b>：点喇叭听发音，可切换美音 / 英音和慢速。欧洲客户多听英音。</li>
+      <li><b>③ 自测</b>：选「遮中文」或「遮英文」，看着一边回忆另一边，点模糊处看答案。</li>
+      <li><b>④ 打勾</b>：学会一条就点右上角的圆圈，进度自动保存在这台电脑的浏览器里。</li>
+    </ul>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-in">
+    <label class="search" aria-label="搜索">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="搜英文或中文，如 误报" autocomplete="off">
+      <kbd>/</kbd>
+    </label>
+    <span class="lbl">模式</span>
+    <div class="seg" id="mode" role="group" aria-label="学习模式">
+      <button data-v="all" aria-pressed="true">全部显示</button>
+      <button data-v="hide-zh" aria-pressed="false">遮中文</button>
+      <button data-v="hide-en" aria-pressed="false">遮英文</button>
+    </div>
+    <span class="lbl">发音</span>
+    <div class="seg" id="accent" role="group" aria-label="发音口音">
+      <button data-v="en-US" aria-pressed="true">美音</button>
+      <button data-v="en-GB" aria-pressed="false">英音</button>
+    </div>
+    <div class="seg" id="rate" role="group" aria-label="语速">
+      <button data-v="0.95" aria-pressed="true">正常</button>
+      <button data-v="0.7" aria-pressed="false">慢速</button>
+    </div>
+    <button class="chk" id="coreOnly" aria-pressed="false">只看必背</button>
+    <button class="chk" id="showDone" aria-pressed="false">只看已掌握</button>
+    <button class="chk" id="hideDone" aria-pressed="false">隐藏已掌握</button>
+    <span class="spacer"></span>
+    <span class="result" id="result"></span>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="toc" id="toc" aria-label="目录"></nav>
+  <main>
+    <div id="main"></div>
+    <div class="empty" id="empty" role="status" aria-live="polite">没有匹配的内容，换个关键词试试。</div>
+    <p class="foot">例句中的数字仅为示范，实际沟通请换成真实数据 · 学习进度只保存在本机浏览器</p>
+  </main>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* v(英文, 音标, 词性, 中文, 例句, 例句翻译, 提示, 是否必背, 朗读文本) */
+function v(w,p,t,z,e,ez,n,c,s){return {w,p,t,z,e,ez,n,c:!!c,s}}
+
+const DATA = [
+{ id:'A', title:'必备词汇', en:'Vocabulary', desc:'按主题分组。行业名词、设备、AI 事件、视频数据、平台功能，再加上产品经理日常工作、技术支持和商务谈判里最常出现的词。', subs:[
+
+{ id:'A1', title:'行业与角色', en:'Industry & Roles', items:[
+v("video telematics","/ˈvɪdioʊ ˌtɛləˈmætɪks/","n.","视频车联网（视频 + 车辆数据）","Video telematics gives fleet managers both the data and the video behind every event.","视频车联网让车队管理者既能看到每个事件的数据，也能看到背后的视频。","这就是你所在行业的英文名，自我介绍可以说：I work in video telematics.",1),
+v("telematics","/ˌtɛləˈmætɪks/","n.","车联网；远程车辆信息服务","Are you using any telematics system at the moment?","你们目前在用什么车联网系统吗？","重音在 -MA-。telematics provider = 车联网服务商（也就是同行）。",1),
+v("fleet","/fliːt/","n.","车队；一家公司的全部车辆","How many vehicles are there in your fleet?","你们车队一共有多少辆车？","注意和 flight /flaɪt/ 区分。fleet size = 车队规模。",1),
+v("fleet management","/ˌfliːt ˈmænɪdʒmənt/","n.","车队管理","Fleet management is no longer just about GPS tracking.","车队管理早已不只是 GPS 定位了。","",1),
+v("fleet operator","/ˌfliːt ˈɑːpəreɪtər/","n.","车队运营方（拥有并运营车队的公司）","Most fleet operators care about three things: safety, cost and uptime.","大多数车队运营方关心三件事：安全、成本和车辆出勤。","",0),
+v("fleet manager","/ˌfliːt ˈmænɪdʒər/","n.","车队经理","The fleet manager is usually the main user of the platform.","车队经理通常是平台的主要使用者。","",1),
+v("safety manager","/ˈseɪfti ˌmænɪdʒər/","n.","安全经理","The safety manager reviews the high-risk events every morning.","安全经理每天早上审看高风险事件。","",0),
+v("dispatcher","/dɪˈspætʃər/","n.","调度员","Dispatchers need to know where every vehicle is in real time.","调度员需要实时知道每辆车在哪。","dispatch (v.) = 调度、派车。",0),
+v("logistics","/loʊˈdʒɪstɪks/","n.","物流","Most of our customers are in logistics and public transport.","我们的客户大多在物流和公共交通领域。","",0),
+v("long-haul","/ˌlɔːŋ ˈhɔːl/","adj.","长途（干线）运输的","Fatigue is the biggest risk for long-haul drivers.","疲劳是长途司机面临的最大风险。","短途是 short-haul。",0),
+v("last-mile delivery","/ˌlæst ˈmaɪl dɪˈlɪvəri/","n.","最后一公里配送","Last-mile delivery drivers can make more than a hundred stops a day.","做最后一公里配送的司机一天可能要停靠上百个点。","",0),
+v("public transit","/ˌpʌblɪk ˈtrænzɪt/","n.","公共交通","In public transit, passenger safety always comes first.","在公共交通领域，乘客安全永远第一。","美式说法；英式多说 public transport。",0),
+v("commercial vehicle","/kəˈmɜːrʃəl ˈviːəkəl/","n.","商用车","This camera is designed for commercial vehicles, not private cars.","这款摄像头是为商用车设计的，不是私家车。","vehicle 中间的 h 不发音。",0),
+v("heavy-duty truck","/ˌhɛvi ˈduːti trʌk/","n.","重型卡车","Heavy-duty trucks need more cameras because of their large blind spots.","重卡盲区大，需要装更多摄像头。","",0),
+v("trailer","/ˈtreɪlər/","n.","挂车","Some customers want to track their trailers separately from the trucks.","有些客户希望把挂车和车头分开追踪。","车头 = tractor / tractor unit。",0),
+v("asset","/ˈæsɛt/","n.","资产（车辆、挂车、集装箱等）","They also want to track non-powered assets like containers.","他们还想追踪集装箱这类无动力资产。","asset tracking = 资产追踪。",0),
+v("TSP","/ˌtiː ɛs ˈpiː/","n.","车联网服务商（Telematics Service Provider）","Many TSPs integrate our devices into their own platforms.","很多车联网服务商把我们的设备接入他们自己的平台。","按字母读 T-S-P。",1,"T S P"),
+v("OEM","/ˌoʊ iː ˈɛm/","n.","原始设备制造商（车辆语境多指主机厂）","Some truck OEMs now install cameras at the factory.","一些卡车主机厂现在出厂就预装摄像头。","按字母读。前装 = factory-installed，后装 = aftermarket。",0,"O E M"),
+v("distributor / reseller","/dɪˈstrɪbjətər/ · /ˈriːsɛlər/","n.","分销商 / 经销商","In Mexico, we work through a local distributor.","在墨西哥，我们通过当地分销商合作。","",0),
+v("system integrator","/ˈsɪstəm ˈɪntəˌɡreɪtər/","n.","系统集成商（SI）","The system integrator will handle installation and integration.","安装和系统对接由系统集成商负责。","",0),
+v("end customer","/ˌɛnd ˈkʌstəmər/","n.","终端客户","Our partner sells the complete solution to the end customer.","我们的合作伙伴把整套方案卖给终端客户。","",0),
+v("insurer","/ɪnˈʃʊrər/","n.","保险公司","Insurers are very interested in video evidence.","保险公司对视频证据非常感兴趣。","",0),
+v("competitor","/kəmˈpɛtɪtər/","n.","竞争对手","How are you different from your competitors?","你们和竞争对手有什么区别？","客户最常问的问题之一，要提前准备好答案。",1)
+]},
+
+{ id:'A2', title:'硬件与安装', en:'Hardware & Installation', items:[
+v("dashcam","/ˈdæʃkæm/","n.","行车记录仪（dash camera）","The AI dashcam can detect phone use and fatigue.","这款 AI 行车记录仪能识别打电话和疲劳驾驶。","",1),
+v("MDVR","/ˌɛm diː viː ˈɑːr/","n.","车载硬盘录像机（Mobile DVR，可接多路摄像头）","Buses usually use an MDVR because they need more cameras.","公交车通常用 MDVR，因为要接更多摄像头。","按字母读 M-D-V-R。",1,"M D V R"),
+v("channel","/ˈtʃænəl/","n.","路（视频通道）","We need a four-channel system: front, cabin, left side and rear.","我们需要一套四路系统：前视、车内、左侧和后视。","中文的“几路”= X-channel，例如 8-channel MDVR。",1),
+v("road-facing camera","/ˈroʊd ˌfeɪsɪŋ ˈkæmərə/","n.","前视摄像头（拍路面）","The road-facing camera records everything in front of the vehicle.","前视摄像头会记录车辆前方的一切。","也叫 forward-facing camera / front camera。",0),
+v("driver-facing camera","/ˈdraɪvər ˌfeɪsɪŋ ˈkæmərə/","n.","车内摄像头（拍司机）","Some drivers don't like the driver-facing camera at first.","一开始有些司机不太接受车内摄像头。","也叫 in-cab camera / cabin camera。",1),
+v("side camera","/ˈsaɪd ˌkæmərə/","n.","侧视摄像头","A side camera helps cover the blind spot when the bus turns.","侧视摄像头能在公交车转弯时覆盖盲区。","",0),
+v("sensor","/ˈsɛnsər/","n.","传感器","The sensor data is uploaded together with the video.","传感器数据会和视频一起上传。","",0),
+v("G-sensor","/ˈdʒiː ˌsɛnsər/","n.","加速度传感器","The G-sensor detects harsh braking and impacts.","G-sensor 能检测急刹车和碰撞冲击。","正式名称是 accelerometer /əkˌsɛləˈrɑːmɪtər/。",0),
+v("gyroscope","/ˈdʒaɪrəskoʊp/","n.","陀螺仪","With a gyroscope, we can detect sharp turns more accurately.","有了陀螺仪，急转弯识别会更准确。","加速度计 + 陀螺仪 = 六轴传感器（six-axis IMU）。",0),
+v("GPS signal","/ˌdʒiː piː ˈɛs ˈsɪɡnəl/","n.","GPS 信号","In tunnels, the GPS signal may be lost for a few minutes.","在隧道里，GPS 信号可能会丢失几分钟。","GPS drift = 定位漂移。",0),
+v("OBD port","/ˌoʊ biː ˈdiː pɔːrt/","n.","OBD 接口","If you plug into the OBD port, you can read fuel and engine data.","接上 OBD 接口，就能读取油耗和发动机数据。","",0,"O B D port"),
+v("CAN bus","/ˈkæn bʌs/","n.","CAN 总线","On heavy trucks, engine data is read from the CAN bus.","在重卡上，发动机数据是从 CAN 总线读取的。","读作 can bus，不逐字母读。",0,"can bus"),
+v("peripheral","/pəˈrɪfərəl/","n.","外设","Fuel and temperature monitoring require extra peripherals.","油量和温度监测需要额外加装外设。","重音在第二音节 pe-RI-pheral。",1),
+v("fuel-level sensor","/ˈfjuːəl ˌlɛvəl ˈsɛnsər/","n.","油量传感器","A fuel-level sensor can detect fuel theft at night.","油量传感器能检测夜间偷油。","",0),
+v("temperature sensor","/ˈtɛmpərətʃər ˈsɛnsər/","n.","温度传感器","Cold-chain customers need temperature sensors in the cargo area.","冷链客户需要在货厢里装温度传感器。","cold chain = 冷链。",0),
+v("driver ID","/ˈdraɪvər ˌaɪ ˈdiː/","n.","司机身份识别","Drivers tap an RFID card to log in before they start driving.","司机出车前刷一下 RFID 卡登录身份。","常见方式：RFID card、iButton、face recognition（人脸识别）。",0,"driver I D"),
+v("firmware","/ˈfɜːrmwɛr/","n.","固件","This issue will be fixed in the next firmware version.","这个问题会在下一个固件版本里修复。","",1),
+v("OTA update","/ˌoʊ tiː ˈeɪ ˈʌpdeɪt/","n.","远程升级（over-the-air）","We can push OTA updates without sending anyone to the vehicle.","我们可以远程推送升级，不用派人到车上。","",1,"O T A update"),
+v("SIM card","/ˈsɪm kɑːrd/","n.","SIM 卡","Who provides the SIM card and the data plan?","SIM 卡和流量套餐由谁提供？","SIM 读成一个词 sim。data plan = 流量套餐。",1),
+v("SD card","/ˌɛs ˈdiː kɑːrd/","n.","SD 存储卡","Video is stored on the SD card and uploaded only when needed.","视频存在 SD 卡里，需要时才上传。","",0,"S D card"),
+v("installation","/ˌɪnstəˈleɪʃən/","n.","安装","How long does the installation take per vehicle?","每辆车安装要多长时间？","installer = 安装工；install (v.) = 安装。",1),
+v("wiring harness","/ˈwaɪərɪŋ ˌhɑːrnɪs/","n.","线束","Please check the wiring harness before you replace the device.","更换设备前请先检查线束。","",0),
+v("calibration","/ˌkælɪˈbreɪʃən/","n.","标定；校准","ADAS needs calibration after installation.","ADAS 安装后需要标定。","动词 calibrate /ˈkælɪbreɪt/。",1),
+v("ignition","/ɪɡˈnɪʃən/","n.","点火（国内常说的 ACC）","The device starts recording when the ignition is on.","点火后设备就开始录像。","ignition on / off = 点火 / 熄火。",0),
+v("heartbeat","/ˈhɑːrtbiːt/","n.","心跳（设备定时上报）","If there's no heartbeat for 24 hours, the device shows as offline.","24 小时没有心跳，设备就显示为离线。","",0),
+v("online / offline","/ˌɑːnˈlaɪn/ · /ˌɔːfˈlaɪn/","adj.","在线 / 离线","Why is this device showing offline?","这台设备为什么显示离线？","",1),
+v("serial number","/ˈsɪriəl ˌnʌmbər/","n.","序列号（SN）","Could you send me the serial number of the device?","能把这台设备的序列号发给我吗？","书面常写 SN 或 Device SN。",1),
+v("tampering","/ˈtæmpərɪŋ/","n.","人为破坏（遮挡镜头、拔线等）","The system sends an alert if someone is tampering with the camera.","有人破坏摄像头时，系统会发出告警。","tamper with sth = 擅自动、破坏某物。",1),
+v("power consumption","/ˈpaʊər kənˌsʌmpʃən/","n.","功耗","Low power consumption matters when a truck is parked for days.","卡车停放好几天时，低功耗很关键。","battery drain = 电瓶亏电。",0),
+v("field of view","/ˌfiːld əv ˈvjuː/","n.","视场角（FOV）","A wider field of view can cover more lanes.","视场角越大，能覆盖的车道越多。","",0)
+]},
+
+{ id:'A3', title:'AI 识别与驾驶事件', en:'AI Detection & Driving Events', items:[
+v("ADAS","/ˈeɪdæs/","n.","高级驾驶辅助系统","ADAS warns the driver before a possible collision.","ADAS 会在可能发生碰撞前提醒司机。","通常读成一个词 AY-das。全称 Advanced Driver Assistance Systems。",1),
+v("DMS","/ˌdiː ɛm ˈɛs/","n.","驾驶员状态监测（Driver Monitoring System）","DMS detects fatigue, distraction and phone use.","DMS 能识别疲劳、分心和打电话。","按字母读 D-M-S。",1,"D M S"),
+v("BSD","/ˌbiː ɛs ˈdiː/","n.","盲区检测（Blind Spot Detection）","Blind spot detection is becoming a legal requirement for trucks and buses in Europe.","在欧洲，盲区检测正逐步成为卡车和公交车的法定要求。","",0,"B S D"),
+v("event","/ɪˈvɛnt/","n.","事件（报警事件）","Each event includes a short video, the location and the speed.","每个事件都包含一段短视频、位置和车速。","",1),
+v("alert","/əˈlɜːrt/","n./v.","告警；提醒","You can choose which events trigger a real-time alert.","你可以选择哪些事件触发实时告警。","对外优先说 alert。alarm 更像刺耳的警铃，听起来很“吵”。",1),
+v("harsh braking","/ˌhɑːrʃ ˈbreɪkɪŋ/","n.","急刹车","Harsh braking often means the driver was following too closely.","急刹车往往说明司机跟车太近。","harsh 也可以换成 hard：hard braking。",1),
+v("harsh acceleration","/ˌhɑːrʃ əkˌsɛləˈreɪʃən/","n.","急加速","Harsh acceleration wastes a lot of fuel.","急加速非常费油。","",0),
+v("harsh cornering","/ˌhɑːrʃ ˈkɔːrnərɪŋ/","n.","急转弯","Harsh cornering with a full load can cause a rollover.","满载急转弯可能导致侧翻。","",0),
+v("speeding","/ˈspiːdɪŋ/","n.","超速","Speeding is still the most common violation we see.","超速仍然是我们看到最多的违规行为。","speed limit = 限速。",0),
+v("distracted driving","/dɪˈstræktɪd ˈdraɪvɪŋ/","n.","分心驾驶","Distracted driving is one of the main causes of rear-end collisions.","分心驾驶是追尾事故的主要原因之一。","rear-end collision = 追尾。",1),
+v("phone use","/ˈfoʊn juːs/","n.","使用手机","The driver hears a voice warning when phone use is detected.","检测到使用手机时，司机会听到语音提醒。","use 作名词读 /juːs/，结尾是清音 s。",0),
+v("smoking","/ˈsmoʊkɪŋ/","n.","抽烟","Many fleets don't allow smoking in the cab.","很多车队禁止在驾驶室里抽烟。","cab = 驾驶室。",0),
+v("fatigue","/fəˈtiːɡ/","n.","疲劳","Yawning and eye closure are typical signs of fatigue.","打哈欠和闭眼是疲劳的典型表现。","重音在后：fa-TIGUE。近义词 drowsiness /ˈdraʊzinəs/（困倦）。",1),
+v("seatbelt violation","/ˈsiːtbɛlt ˌvaɪəˈleɪʃən/","n.","未系安全带","Seatbelt violations usually drop quickly once drivers know they're being monitored.","司机知道自己被监测后，未系安全带的情况通常很快减少。","",0),
+v("camera obstruction","/ˈkæmərə əbˈstrʌkʃən/","n.","镜头遮挡","We got a camera obstruction alert — the driver had covered the lens.","我们收到一条镜头遮挡告警——司机把镜头挡住了。","",0),
+v("forward collision warning","/ˈfɔːrwərd kəˈlɪʒən ˈwɔːrnɪŋ/","n.","前向碰撞预警（FCW）","Forward collision warning gives the driver extra time to react.","前向碰撞预警让司机有更多反应时间。","",0),
+v("lane departure warning","/ˈleɪn dɪˌpɑːrtʃər ˈwɔːrnɪŋ/","n.","车道偏离预警（LDW）","On narrow roads, too many lane departure warnings can annoy drivers.","在窄路上，车道偏离预警太多会让司机很烦。","",0),
+v("tailgating","/ˈteɪlˌɡeɪtɪŋ/","n.","跟车过近","Tailgating is one of the riskiest behaviors on the highway.","跟车过近是高速公路上最危险的行为之一。","也说 following too closely。车距监测 = headway monitoring（HMW）。",1),
+v("pedestrian detection","/pəˈdɛstriən dɪˌtɛkʃən/","n.","行人检测","Pedestrian detection is very important for city buses.","行人检测对城市公交非常重要。","",0),
+v("blind spot","/ˈblaɪnd spɑːt/","n.","盲区","Many right-turn accidents happen because of the blind spot.","很多右转事故都是盲区造成的。","在英国这类靠左行驶的国家，危险的是左转。",1),
+v("collision","/kəˈlɪʒən/","n.","碰撞","The video was uploaded automatically after the collision.","碰撞发生后，视频自动上传了。","",1),
+v("rollover","/ˈroʊlˌoʊvər/","n.","侧翻","A rollover alert goes straight to the manager's phone.","侧翻告警会直接推送到管理者手机上。","",0),
+v("near miss","/ˌnɪr ˈmɪs/","n.","险情（差点发生的事故）","For every accident, there are many near misses that nobody reports.","每起事故背后，都有许多没人上报的险情。","",1),
+v("crash detection","/ˈkræʃ dɪˌtɛkʃən/","n.","碰撞（事故）检测","Crash detection is based on the G-sensor data.","碰撞检测基于 G-sensor 数据。","",0),
+v("false positive","/ˌfɔːls ˈpɑːzətɪv/","n.","误报（false alarm）","With too many false positives, managers stop checking the alerts.","误报太多，管理者就不再查看告警了。","",1),
+v("false negative","/ˌfɔːls ˈnɛɡətɪv/","n.","漏报（missed detection）","In safety, a false negative is worse than a false positive.","在安全领域，漏报比误报更糟糕。","",1),
+v("accuracy","/ˈækjərəsi/","n.","准确率","What's the accuracy of your fatigue detection?","你们疲劳识别的准确率是多少？","被追问时最好分开讲：precision（报出来的有多少是真的）和 recall（真实发生的有多少被报出来）。",1),
+v("detection rate","/dɪˈtɛkʃən ˌreɪt/","n.","检出率","We improved the detection rate without adding more false alarms.","我们在不增加误报的前提下提高了检出率。","",0),
+v("threshold","/ˈθrɛʃhoʊld/","n.","阈值","We can raise the speed threshold to reduce alerts.","可以调高速度阈值来减少告警。","读 THRESH-hold，中间只有一个 h 音。",1),
+v("sensitivity","/ˌsɛnsəˈtɪvəti/","n.","灵敏度","Lower sensitivity means fewer alerts, but you may miss some events.","灵敏度调低，告警会变少，但可能漏掉一些事件。","",0),
+v("severity","/səˈvɛrəti/","n.","严重程度","Events are sorted by severity, so the critical ones come first.","事件按严重程度排序，最严重的排在最前面。","",0),
+v("edge AI","/ˌɛdʒ ˌeɪ ˈaɪ/","n.","端侧 AI（在设备上运行）","With edge AI, the device can warn the driver even without a network.","有了端侧 AI，设备即使没网也能提醒司机。","对应 cloud AI（云端 AI）。",1,"edge A I"),
+v("cloud verification","/ˈklaʊd ˌvɛrɪfɪˈkeɪʃən/","n.","云端二次校验","Events are double-checked by cloud AI before they reach the manager.","事件在推送给管理者之前，会经过云端 AI 二次校验。","",0),
+v("algorithm","/ˈælɡərɪðəm/","n.","算法","Our algorithm team is working on the next version.","我们的算法团队正在开发下一个版本。","",0),
+v("model","/ˈmɑːdəl/","n.","（AI）模型","We need more night-time videos to train the model.","我们需要更多夜间视频来训练模型。","注意和 device model（设备型号）区分。",0),
+v("annotation","/ˌænəˈteɪʃən/","n.","数据标注（labeling）","Could you share some false alarm videos with us for annotation?","能分享一些误报视频给我们做标注吗？","",0),
+v("scenario","/səˈnɛrioʊ/","n.","场景","Night driving is a difficult scenario for the camera.","夜间驾驶对摄像头来说是个困难场景。","美音 sə-NAIR-ee-oh。",1)
+]},
+
+{ id:'A4', title:'视频与数据', en:'Video & Data', items:[
+v("live video","/ˌlaɪv ˈvɪdioʊ/","n.","实时视频","Can I watch live video from the office?","我能在办公室看实时视频吗？","live 作形容词读 /laɪv/（同 alive），不读 /lɪv/。",1),
+v("playback","/ˈpleɪbæk/","n.","回放","Video playback is slow on this network.","在这个网络下视频回放很慢。","名词连写 playback，动词分开写 play back。",1),
+v("footage","/ˈfʊtɪdʒ/","n.","录像；视频素材","Can you send me the footage from yesterday afternoon?","能把昨天下午的录像发给我吗？","不可数名词。",1),
+v("clip","/klɪp/","n.","视频片段","Each event clip is about ten seconds long.","每个事件片段大约十秒。","",0),
+v("video retrieval","/ˈvɪdioʊ rɪˈtriːvəl/","n.","视频调取","Video retrieval from the device takes a few minutes.","从设备调取视频需要几分钟。","动词 retrieve = 调取。",0),
+v("upload","/ˈʌploʊd/ · /ʌpˈloʊd/","n./v.","上传","The video failed to upload because of a weak signal.","因为信号弱，视频上传失败了。","名词重音在前，动词重音在后。",0),
+v("evidence","/ˈɛvɪdəns/","n.","证据","Video is the best evidence after an accident.","视频是事故发生后最好的证据。","不可数，不说 evidences；一条证据 = a piece of evidence。",1),
+v("resolution","/ˌrɛzəˈluːʃən/","n.","分辨率","Higher resolution means more data usage.","分辨率越高，流量消耗越大。","",0),
+v("frame rate","/ˈfreɪm ˌreɪt/","n.","帧率","We lowered the frame rate to save storage.","我们降低了帧率来节省存储。","fps = frames per second。",0),
+v("bitrate","/ˈbɪtreɪt/","n.","码率","Bitrate affects both image quality and data cost.","码率既影响画质，也影响流量成本。","",0),
+v("latency","/ˈleɪtənsi/","n.","延迟","There's about a three-second latency on live video.","实时视频大约有三秒延迟。","",0),
+v("bandwidth","/ˈbændwɪdθ/","n.","带宽","Live streaming needs stable bandwidth.","实时视频流需要稳定的带宽。","",0),
+v("data usage","/ˈdeɪtə ˌjuːsɪdʒ/","n.","流量消耗","Customers always ask about the monthly data usage.","客户总会问每月的流量消耗。","",1),
+v("coverage","/ˈkʌvərɪdʒ/","n.","（网络）信号覆盖","In rural areas with poor coverage, the video uploads later.","在信号覆盖差的乡村地区，视频会稍后上传。","",0),
+v("cloud storage","/ˈklaʊd ˌstɔːrɪdʒ/","n.","云存储","How long is the video kept in cloud storage?","视频在云存储里保留多久？","",0),
+v("data retention","/ˈdeɪtə rɪˈtɛnʃən/","n.","数据保留期","The default data retention period is 90 days.","默认数据保留期是 90 天。","",0),
+v("redaction","/rɪˈdækʃən/","n.","（影像）脱敏","Redaction blurs faces and license plates before the video is shared.","脱敏会在视频分享前把人脸和车牌模糊掉。","blur (v.) /blɜːr/ = 模糊处理。",0),
+v("privacy","/ˈpraɪvəsi/","n.","隐私","Driver privacy is a big concern in Europe.","在欧洲，司机隐私是个大问题。","英音读 /ˈprɪvəsi/。",1),
+v("GDPR","/ˌdʒiː diː piː ˈɑːr/","n.","欧盟《通用数据保护条例》","Is your platform GDPR-compliant?","你们的平台符合 GDPR 吗？","巴西对应的法规是 LGPD。",1,"G D P R"),
+v("data residency","/ˈdeɪtə ˈrɛzɪdənsi/","n.","数据驻留（数据存放在哪个国家 / 地区）","Data residency is often the first question from government customers.","数据驻留往往是政府类客户问的第一个问题。","常见问法：Where is the data hosted?",0),
+v("encryption","/ɪnˈkrɪpʃən/","n.","加密","Is the video encrypted in transit and at rest?","视频在传输和存储时都加密吗？","in transit = 传输中；at rest = 存储中。",0)
+]},
+
+{ id:'A5', title:'平台功能', en:'Platform Features', items:[
+v("dashboard","/ˈdæʃbɔːrd/","n.","仪表盘","The dashboard shows the key numbers at a glance.","仪表盘让人一眼就能看到关键数据。","",1),
+v("real-time tracking","/ˈriːəl ˌtaɪm ˈtrækɪŋ/","n.","实时追踪","Real-time tracking is usually the first thing customers ask for.","实时追踪通常是客户最先要的功能。","作定语要加连字符：real-time data；作状语不加：in real time。",1),
+v("trip","/trɪp/","n.","行程","A trip starts when the engine starts and ends when it stops.","发动机启动开始一段行程，熄火结束。","",0),
+v("route playback","/ˈruːt ˌpleɪbæk/","n.","轨迹回放","Route playback shows exactly where the truck went.","轨迹回放能准确显示卡车去过哪里。","route 美音也可以读 /raʊt/。",0),
+v("geofence","/ˈdʒiːoʊˌfɛns/","n.","电子围栏","You get notified when a vehicle leaves the geofence.","车辆驶出电子围栏时，你会收到通知。","",1),
+v("notification","/ˌnoʊtɪfɪˈkeɪʃən/","n.","通知","Notifications can be sent by email or in the app.","通知可以通过邮件或 App 推送。","",0),
+v("safety score","/ˈseɪfti ˌskɔːr/","n.","安全评分","The safety score helps managers compare drivers fairly.","安全评分帮助管理者公平地比较司机。","driver scorecard = 司机评分卡。",1),
+v("coaching","/ˈkoʊtʃɪŋ/","n.","驾驶辅导","Coaching with real video changes driver behavior faster.","用真实视频做辅导，能更快改变驾驶行为。","coach (v.) = 辅导某人。",1),
+v("workflow","/ˈwɜːrkfloʊ/","n.","工作流程","What does your workflow look like when an accident happens?","发生事故时，你们的处理流程是怎样的？","",1),
+v("review","/rɪˈvjuː/","v./n.","审核；查看","Someone has to review every high-risk event within 24 hours.","每个高风险事件都必须在 24 小时内有人审核。","",0),
+v("idling","/ˈaɪdlɪŋ/","n.","怠速","Idling wastes a lot of fuel in winter.","冬天怠速非常费油。","idle 和 idol 读音相同。",1),
+v("fuel consumption","/ˈfjuːəl kənˌsʌmpʃən/","n.","油耗","Fuel consumption is measured in liters per 100 kilometers.","油耗以每百公里多少升来计算。","北美用 mpg（miles per gallon），数值越大越省油，和 L/100 km 正好相反。",0),
+v("fuel theft","/ˈfjuːəl ˌθɛft/","n.","偷油","Fuel theft is a big problem for our customers in Brazil.","偷油对我们巴西的客户来说是个大问题。","也说 fuel siphoning（抽油）。",0),
+v("utilization","/ˌjuːtələˈzeɪʃən/","n.","利用率","Low utilization means some vehicles are sitting idle.","利用率低说明有些车在闲置。","",0),
+v("compliance","/kəmˈplaɪəns/","n.","合规","Compliance rules are different in every country.","每个国家的合规要求都不一样。","comply with = 遵守。",1),
+v("ELD","/ˌiː ɛl ˈdiː/","n.","电子行车日志设备（北美法规）","In the US and Canada, fleets must use an ELD to record hours of service.","在美国和加拿大，车队必须用 ELD 记录驾驶工时。","HOS = hours of service（驾驶工时规定）。",0,"E L D"),
+v("tachograph","/ˈtækəɡræf/","n.","行驶记录仪（欧盟法定设备）","In Europe, trucks use a tachograph to record driving time.","在欧洲，卡车用行驶记录仪记录驾驶时间。","",0),
+v("maintenance","/ˈmeɪntənəns/","n.","维护保养","Preventive maintenance reduces unexpected breakdowns.","预防性保养能减少意外故障。","读 MAIN-te-nance，不是 maintain-ance。",0),
+v("fault code","/ˈfɔːlt ˌkoʊd/","n.","故障码（DTC）","Engine fault codes are read from the OBD port.","发动机故障码是从 OBD 接口读取的。","",0),
+v("report","/rɪˈpɔːrt/","n.","报表","Can I schedule this report to be sent every Monday?","这个报表能设置成每周一自动发送吗？","",1),
+v("export","/ɪkˈspɔːrt/","v.","导出","Can I export the data to Excel?","数据能导出成 Excel 吗？","动词重音在后 ex-PORT，名词重音在前 EX-port。",0),
+v("permission","/pərˈmɪʃən/","n.","权限","Drivers shouldn't have permission to delete videos.","司机不应该有删除视频的权限。","user role = 用户角色。",0),
+v("audit log","/ˈɔːdɪt ˌlɔːɡ/","n.","操作日志","The audit log shows who viewed or downloaded each video.","操作日志会记录谁查看或下载了每段视频。","",0),
+v("multi-tenant","/ˌmʌlti ˈtɛnənt/","adj.","多租户的","A multi-tenant platform lets one reseller manage many customers.","多租户平台能让一个经销商管理很多客户。","",0),
+v("API","/ˌeɪ piː ˈaɪ/","n.","接口","Do you have an open API?","你们有开放 API 吗？","",1,"A P I"),
+v("integration","/ˌɪntɪˈɡreɪʃən/","n.","集成；对接","Integration with their TMS is a must-have for this customer.","对这个客户来说，对接他们的 TMS 是硬性需求。","TMS = 运输管理系统；ERP = 企业资源计划系统。",1),
+v("webhook","/ˈwɛbhʊk/","n.","Webhook 回调推送","We can push events to your system through a webhook.","我们可以通过 Webhook 把事件推送到你们的系统。","",0),
+v("SSO","/ˌɛs ɛs ˈoʊ/","n.","单点登录（single sign-on）","Large customers often ask for SSO with Microsoft.","大客户经常要求接入微软单点登录。","",0,"S S O"),
+v("white label","/ˌwaɪt ˈleɪbəl/","n./v.","贴牌（换成客户自己的品牌）","Can we white-label the platform with our own logo?","我们能用自己的 logo 给平台贴牌吗？","渠道商和 TSP 很常问。",1),
+v("localization","/ˌloʊkələˈzeɪʃən/","n.","本地化","We need Portuguese localization for the Brazilian market.","巴西市场需要做葡萄牙语本地化。","",0)
+]},
+
+{ id:'A6', title:'产品经理工作', en:'Product Management', items:[
+v("requirement","/rɪˈkwaɪərmənt/","n.","需求","Could you send us the detailed requirements in writing?","能把详细需求书面发给我们吗？","常用复数 requirements。",1),
+v("feature request","/ˈfiːtʃər rɪˌkwɛst/","n.","功能需求（客户提的新功能）","We've logged your feature request and will review it next sprint.","你的功能需求我们已经记录，下个迭代会评估。","",1),
+v("use case","/ˈjuːs ˌkeɪs/","n.","使用场景；用例","Can you walk me through the use case?","能给我讲讲具体的使用场景吗？","use 在这里是名词，读 /juːs/。",1),
+v("pain point","/ˈpeɪn ˌpɔɪnt/","n.","痛点","What's the biggest pain point for your dispatchers?","你们调度员最大的痛点是什么？","",1),
+v("must-have / nice-to-have","/ˈmʌst ˌhæv/ · /ˈnaɪs tə ˌhæv/","n.","必须有 / 有了更好","Is this a must-have or a nice-to-have for you?","这对你们来说是必须要的，还是有了更好？","区分需求优先级最好用的一句。",1),
+v("scope","/skoʊp/","n.","范围","That's out of scope for this phase.","这不在本阶段的范围内。","in scope / out of scope。",1),
+v("MVP","/ˌɛm viː ˈpiː/","n.","最小可行产品","The first release is an MVP with only the core features.","第一个版本是只含核心功能的 MVP。","",0,"M V P"),
+v("roadmap","/ˈroʊdmæp/","n.","产品路线图","This feature is on our roadmap for next year.","这个功能在我们明年的路线图上。","",1),
+v("milestone","/ˈmaɪlstoʊn/","n.","里程碑","The next milestone is the pilot launch in March.","下一个里程碑是三月份的试点上线。","",0),
+v("release","/rɪˈliːs/","n./v.","版本；发布","The fix will be included in the next release.","修复会包含在下一个版本里。","release notes = 版本说明。",1),
+v("go-live","/ˌɡoʊ ˈlaɪv/","n.","上线","The go-live date is October 1st.","上线日期是 10 月 1 日。","动词 go live；也说 launch。",0),
+v("beta","/ˈbeɪtə/","n.","测试版","This feature is still in beta.","这个功能还在测试阶段。","美音 BAY-ta，英音 BEE-ta。",0),
+v("prototype","/ˈproʊtətaɪp/","n.","原型","I'll share a prototype so you can see how it works.","我分享一个原型，你可以看看效果。","mockup /ˈmɑːkʌp/ = 效果图。",1),
+v("spec","/spɛk/","n.","需求规格说明（specification）","Let me update the spec and send it to the engineering team.","我更新一下需求文档，然后发给研发团队。","PRD = product requirements document。",0),
+v("user story","/ˈjuːzər ˌstɔːri/","n.","用户故事","As a fleet manager, I want to get alerts on my phone so I can act quickly.","作为车队经理，我希望在手机上收到告警，以便快速处理。","标准句式：As a…, I want…, so that…",0),
+v("prioritize","/praɪˈɔːrətaɪz/","v.","排优先级","We prioritize requests based on how many customers need them.","我们根据有多少客户需要来给需求排优先级。","",1),
+v("trade-off","/ˈtreɪd ˌɔːf/","n.","权衡；取舍","There's a trade-off between video quality and data cost.","画质和流量成本之间需要权衡。","",1),
+v("backlog","/ˈbæklɔːɡ/","n.","待办需求池","It's in the backlog, but it hasn't been scheduled yet.","它在需求池里，但还没排期。","",0),
+v("sprint","/sprɪnt/","n.","迭代（冲刺周期）","We release a new version at the end of every two-week sprint.","我们每两周一个迭代，迭代结束发一个版本。","",0),
+v("feedback","/ˈfiːdbæk/","n.","反馈","Thanks for the feedback — it's really helpful.","感谢反馈，非常有帮助。","不可数，不说 feedbacks。",1),
+v("configuration vs customization","/kənˌfɪɡjəˈreɪʃən/ · /ˌkʌstəməˈzeɪʃən/","n.","配置 vs 定制开发","That's a configuration, not a customization — you can change it yourself.","这属于配置，不是定制开发——你们自己就能改。","一定要分清：customization 通常意味着额外开发、排期和费用。",1,"configuration versus customization"),
+v("dependency","/dɪˈpɛndənsi/","n.","依赖","This feature has a dependency on the new firmware.","这个功能依赖新固件。","",0),
+v("timeline","/ˈtaɪmlaɪn/","n.","时间表","What's your timeline for the rollout?","你们推广的时间表是怎样的？","deadline = 截止日期。",1),
+v("ETA","/ˌiː tiː ˈeɪ/","n.","预计完成 / 到达时间","Do you have an ETA for the fix?","修复有预计完成时间吗？","",1,"E T A"),
+v("deprecate","/ˈdɛprəkeɪt/","v.","弃用（逐步停止支持）","The old API will be deprecated next year.","旧版 API 明年将被弃用。","",0),
+v("stakeholder","/ˈsteɪkˌhoʊldər/","n.","相关方","We need to align with all stakeholders before changing the workflow.","改流程之前，我们需要和所有相关方对齐。","",0),
+v("decision-maker","/dɪˈsɪʒən ˌmeɪkər/","n.","决策人","Who's the decision-maker on this project?","这个项目由谁拍板？","",1)
+]},
+
+{ id:'A7', title:'问题处理与技术支持', en:'Support & Troubleshooting', items:[
+v("issue","/ˈɪʃuː/","n.","问题","We're aware of the issue and working on a fix.","我们已经知道这个问题，正在修复。","对客户说 issue 比 problem 更中性、更专业。",1),
+v("bug","/bʌɡ/","n.","缺陷；bug","It looks like a bug on our side.","看起来是我们这边的 bug。","",0),
+v("known issue","/ˌnoʊn ˈɪʃuː/","n.","已知问题","This is a known issue in the current version.","这是当前版本的已知问题。","",0),
+v("reproduce","/ˌriːprəˈduːs/","v.","复现","We can't reproduce the issue on our side.","我们这边复现不了这个问题。","",1),
+v("log","/lɔːɡ/","n.","日志","Could you send us the device logs?","能把设备日志发给我们吗？","",1),
+v("screen recording","/ˈskriːn rɪˌkɔːrdɪŋ/","n.","录屏","A screenshot or a screen recording would help a lot.","有截图或录屏会很有帮助。","",0),
+v("root cause","/ˌruːt ˈkɔːz/","n.","根本原因","We found the root cause: the SIM card had run out of data.","我们找到了根本原因：SIM 卡流量用完了。","",1),
+v("hotfix","/ˈhɑːtfɪks/","n.","紧急修复（版本）","We'll release a hotfix this week.","我们这周会发一个紧急修复版本。","fix = 修复；patch = 补丁。",0),
+v("workaround","/ˈwɜːrkəˌraʊnd/","n.","临时解决办法","Until the fix is ready, here's a workaround.","在修复好之前，可以先用这个临时办法。","",1),
+v("ticket","/ˈtɪkɪt/","n.","工单","Please open a support ticket so we can track it.","请提交一个支持工单，方便我们跟踪。","",0),
+v("escalate","/ˈɛskəleɪt/","v.","升级（问题处理级别）","I'll escalate this to our R&D team.","我会把这个问题升级给研发团队。","R&D 读作 R and D。",1),
+v("troubleshoot","/ˈtrʌbəlʃuːt/","v.","排查故障","Let's troubleshoot this step by step.","我们一步一步排查。","",0),
+v("uptime","/ˈʌptaɪm/","n.","（系统）正常运行时间；可用率","The platform had 99.9% uptime last year.","平台去年的可用率是 99.9%。","车辆语境里 downtime = 停驶时间。",0),
+v("compatible","/kəmˈpætəbəl/","adj.","兼容的","Is this camera compatible with our existing MDVR?","这个摄像头和我们现有的 MDVR 兼容吗？","",1),
+v("RMA","/ˌɑːr ɛm ˈeɪ/","n.","返厂维修（退货授权）","Please send the faulty device back under RMA.","请走 RMA 流程把故障设备寄回。","Return Merchandise Authorization。",0,"R M A"),
+v("defective","/dɪˈfɛktɪv/","adj.","有缺陷的；坏的","Two of the cameras arrived defective.","有两个摄像头到货时就是坏的。","近义词 faulty /ˈfɔːlti/。",0)
+]},
+
+{ id:'A8', title:'商务与合作', en:'Business & Commercial', items:[
+v("quote","/kwoʊt/","n./v.","报价","Could you send us a quote for 500 units?","能给我们 500 台的报价吗？","正式说法 quotation。",1),
+v("proposal","/prəˈpoʊzəl/","n.","方案；提案","We'll send you a technical proposal next week.","我们下周把技术方案发给你。","",0),
+v("pilot","/ˈpaɪlət/","n.","试点","Let's start with a pilot on 20 vehicles.","我们先在 20 辆车上试点吧。","",1),
+v("POC","/ˌpiː oʊ ˈsiː/","n.","概念验证（proof of concept）","The POC will run for one month.","POC 会运行一个月。","",0,"P O C"),
+v("tender / RFP","/ˈtɛndər/ · /ˌɑːr ɛf ˈpiː/","n.","招标 / 招标书（request for proposal）","The customer is preparing an RFP for video telematics.","客户正在准备视频车联网的招标书。","英式和拉美常说 tender，美式常说 RFP。",1,"tender, R F P"),
+v("contract","/ˈkɑːntrækt/","n.","合同","The contract is for three years.","合同期限是三年。","",0),
+v("SLA","/ˌɛs ɛl ˈeɪ/","n.","服务等级协议","The SLA defines how quickly we respond to issues.","SLA 规定了我们响应问题的速度。","",0,"S L A"),
+v("pricing model","/ˈpraɪsɪŋ ˌmɑːdəl/","n.","定价模式","Our pricing model is per vehicle per month.","我们的定价模式是按每车每月收费。","",1),
+v("subscription","/səbˈskrɪpʃən/","n.","订阅","The software is sold as an annual subscription.","软件按年订阅销售。","",0),
+v("license fee","/ˈlaɪsəns ˌfiː/","n.","授权费","Is there a license fee for each user?","每个用户都要收授权费吗？","",0),
+v("one-time fee","/ˌwʌn ˈtaɪm ˌfiː/","n.","一次性费用","The hardware is a one-time fee, and the platform is billed monthly.","硬件是一次性费用，平台按月计费。","recurring fee = 周期性费用。",0),
+v("ROI","/ˌɑːr oʊ ˈaɪ/","n.","投资回报","Customers want to see the ROI within the first year.","客户希望第一年就能看到投资回报。","",1,"R O I"),
+v("TCO","/ˌtiː siː ˈoʊ/","n.","总拥有成本","Compare the TCO, not just the price of the camera.","要比较总拥有成本，而不只是摄像头的价格。","",0,"T C O"),
+v("budget","/ˈbʌdʒɪt/","n.","预算","Is there a budget for this project yet?","这个项目已经有预算了吗？","",0),
+v("procurement","/prəˈkjʊrmənt/","n.","采购","The contract has to go through procurement.","合同需要走采购流程。","",0),
+v("lead time","/ˈliːd ˌtaɪm/","n.","交货周期","What's the lead time for 1,000 devices?","1000 台设备的交期是多久？","lead 读 /liːd/（领先），不读 /lɛd/（铅）。",1),
+v("MOQ","/ˌɛm oʊ ˈkjuː/","n.","最小起订量（minimum order quantity）","What's the MOQ for a customized version?","定制版的最小起订量是多少？","",0,"M O Q"),
+v("warranty","/ˈwɔːrənti/","n.","保修","The devices come with a two-year warranty.","设备保修两年。","",0),
+v("after-sales support","/ˌæftər ˈseɪlz səˌpɔːrt/","n.","售后支持","Who provides after-sales support locally?","本地的售后支持由谁提供？","",0),
+v("NDA","/ˌɛn diː ˈeɪ/","n.","保密协议","We need to sign an NDA before we share the roadmap.","分享路线图之前需要先签保密协议。","",1,"N D A"),
+v("partnership","/ˈpɑːrtnərʃɪp/","n.","合作关系","We're looking for long-term partnerships in Latin America.","我们在拉美寻找长期合作。","",0),
+v("exclusive","/ɪkˈskluːsɪv/","adj.","独家的","They're asking for exclusive distribution rights in Chile.","他们想要智利的独家分销权。","",0)
+]},
+
+{ id:'A9', title:'安全效果与保险', en:'Safety Outcomes & Insurance', items:[
+v("liability","/ˌlaɪəˈbɪləti/","n.","（法律）责任","Video helps reduce your liability in court.","视频有助于减少你在诉讼中承担的责任。","",1),
+v("claim","/kleɪm/","n.","索赔","Insurance claims are settled faster when there's video.","有视频的话，保险理赔会更快。","file a claim = 提出索赔。",0),
+v("at fault","/æt ˈfɔːlt/","adj.","有过错的；负有责任的","The video shows that the other driver was at fault.","视频显示是对方司机的责任。","",1),
+v("exonerate","/ɪɡˈzɑːnəreɪt/","v.","证明……无责","The footage exonerated our driver.","录像证明了我们的司机无责。","比较正式；口语可以说 prove the driver wasn't at fault。",1),
+v("staged accident","/ˌsteɪdʒd ˈæksɪdənt/","n.","碰瓷（故意制造的事故）","Road-facing cameras protect fleets from staged accidents.","前视摄像头能保护车队免遭碰瓷。","insurance fraud = 保险欺诈。",0),
+v("insurance premium","/ɪnˈʃʊrəns ˌpriːmiəm/","n.","保费","A better safety record can lead to lower insurance premiums.","更好的安全记录可以带来更低的保费。","",1),
+v("accident reconstruction","/ˈæksɪdənt ˌriːkənˈstrʌkʃən/","n.","事故还原","Video and sensor data make accident reconstruction much easier.","视频加传感器数据让事故还原容易得多。","",0),
+v("safety culture","/ˈseɪfti ˌkʌltʃər/","n.","安全文化","Technology alone isn't enough; you also need a strong safety culture.","光有技术不够，还需要良好的安全文化。","",0),
+v("regulation","/ˌrɛɡjəˈleɪʃən/","n.","法规","New EU regulations are making driver monitoring mandatory on new vehicles.","欧盟新法规正逐步要求新车强制配备驾驶员监测。","mandatory = 强制的；mandate = 强制规定。",0)
+]}
+]},
+
+{ id:'B', title:'常用短语', en:'Useful Phrases', desc:'按沟通场景分组。和客户开会、做演示、谈需求、跟进进度、听不懂时救场，每个场景都有现成的说法。', subs:[
+
+{ id:'B1', title:'开场与了解需求', en:'Opening & Discovery', items:[
+v("Thanks for taking the time to…","","","感谢抽时间……","Thanks for taking the time to meet with us today.","感谢您今天抽时间和我们见面。","",1),
+v("walk me through…","","","给我（一步步）讲讲……","Could you walk me through how you handle an accident today?","能给我讲讲你们现在是怎么处理事故的吗？","了解客户现状最好用的一句。",1),
+v("What are you trying to achieve?","","","你们想达成什么目标？","What are you trying to achieve with video telematics?","你们希望通过视频车联网达成什么目标？","",1),
+v("on a daily basis","","","每天；日常","How many alerts do you review on a daily basis?","你们每天要审核多少条告警？","",0),
+v("in terms of…","","","在……方面","In terms of hardware, what are you using now?","硬件方面，你们现在用的是什么？","",1),
+v("Could you elaborate on…?","","","能展开讲讲……吗？","Could you elaborate on the false alarm problem?","能详细说说误报的问题吗？","elaborate 作动词读 /ɪˈlæbəreɪt/。",1),
+v("off the top of my head","","","凭印象（不查资料）","Off the top of my head, I'd say about 30% are false alarms.","凭印象，大概 30% 是误报。","客户常用，听懂即可。",0),
+v("What does success look like?","","","怎样才算成功？","What does success look like for this pilot?","这次试点怎样才算成功？","帮你提前锁定验收标准。",1)
+]},
+
+{ id:'B2', title:'讲解与演示', en:'Explaining & Demo', items:[
+v("Let me share my screen.","","","我来共享一下屏幕。","Let me share my screen. Can everyone see it?","我来共享一下屏幕。大家都能看到吗？","",0),
+v("walk you through…","","","带你过一遍……","Let me walk you through the new event review page.","我带你过一遍新的事件审核页面。","",1),
+v("take a look at…","","","看一下……","Let's take a look at this event.","我们来看一下这个事件。","",0),
+v("pull up…","","","调出……","Let me pull up the video for this event.","我把这个事件的视频调出来。","",1),
+v("drill down into…","","","深入查看……的明细","You can drill down into each driver's events.","你可以深入查看每个司机的事件明细。","",0),
+v("As you can see,…","","","如您所见，……","As you can see, the alert came in two seconds after the event.","如您所见，事件发生两秒后告警就到了。","",0),
+v("lets you… / allows you to…","","","让你能够……","This feature lets you filter out low-risk events.","这个功能让你能过滤掉低风险事件。","介绍功能最常用的句型。",1,"lets you, allows you to"),
+v("comes with…","","","自带……","Every device comes with a built-in G-sensor.","每台设备都自带 G-sensor。","",0),
+v("out of the box","","","开箱即用","GPS tracking works out of the box.","GPS 定位开箱即用。","",1),
+v("at a glance","","","一眼看清","The dashboard shows the status of the whole fleet at a glance.","仪表盘让你一眼看清整个车队的状态。","",0),
+v("on top of that","","","除此之外；另外","On top of that, you can export everything to Excel.","除此之外，所有数据都能导出到 Excel。","",0),
+v("What this means for you is…","","","这对你意味着……","What this means for you is fewer false alarms and less wasted time.","这对你意味着更少的误报、更少的时间浪费。","讲完功能，一定要落到客户价值上。",1)
+]},
+
+{ id:'B3', title:'需求与排期', en:'Requirements & Roadmap', items:[
+v("in the pipeline","","","正在筹备中","We have a few new AI features in the pipeline.","我们有几个新的 AI 功能正在筹备中。","",0),
+v("roll out","","","推出；逐步上线","We'll roll out the new version to all customers next month.","我们下个月向所有客户推出新版本。","名词写作 rollout。",1),
+v("phase out","","","逐步淘汰","We're phasing out the old app by the end of the year.","我们会在年底前逐步停用旧版 App。","",0),
+v("look into…","","","调查；研究一下","We'll look into it and get back to you.","我们研究一下再回复你。","",1),
+v("take this back to the team","","","带回去和团队讨论","Let me take this back to the team and see what's possible.","我带回去和团队讨论一下可行性。","不当场承诺的万能说法。",1),
+v("can't commit to… yet","","","暂时无法承诺……","I can't commit to a date yet, but I'll keep you posted.","我暂时没法承诺日期，但会随时同步进展。","",1),
+v("by design","","","设计如此（不是 bug）","That's by design: alerts are muted at very low speeds.","这是设计如此：车速很低时告警会被屏蔽。","",0),
+v("not supported at the moment","","","目前不支持","That's not supported at the moment, but we're considering it.","目前还不支持，但我们在考虑。","比直接说 No 委婉得多。",1),
+v("for a future release","","","在未来版本中","We'll consider it for a future release.","我们会考虑在未来版本中加入。","",0),
+v("on a case-by-case basis","","","具体情况具体分析","We handle customization requests on a case-by-case basis.","定制需求我们会具体情况具体分析。","",0)
+]},
+
+{ id:'B4', title:'会议与跟进', en:'Meetings & Follow-up', items:[
+v("follow up (on)…","","","跟进……","I'll follow up on this by email.","我会通过邮件跟进这件事。","名词 follow-up：a follow-up call。",1,"follow up on"),
+v("get back to you","","","回复你","I'll get back to you by Friday.","我周五前回复你。","",1),
+v("keep you posted","","","随时告诉你进展","I'll keep you posted on the progress.","进展我会随时告诉你。","",1),
+v("touch base","","","联系一下；碰个头","Let's touch base again next week.","我们下周再碰一下。","",0),
+v("circle back (to)…","","","回头再讨论……","Can we circle back to pricing later?","价格问题我们稍后再回来讨论好吗？","",0,"circle back to"),
+v("align on…","","","就……达成一致","Let's align on the requirements before development starts.","开发开始前，我们先把需求对齐。","",1),
+v("on the same page","","","理解一致","Just to make sure we're on the same page — the pilot starts on May 1st.","确认一下我们理解一致——试点 5 月 1 日开始。","",1),
+v("loop in…","","","把……拉进来（加入讨论或邮件）","I'll loop in our technical lead.","我把我们的技术负责人拉进来。","",0),
+v("action items","","","待办事项","Let me quickly recap the action items.","我快速回顾一下待办事项。","",0),
+v("next steps","","","下一步","What are the next steps on your side?","你们那边下一步是什么？","会议结尾必问。",1),
+v("set up a call","","","约一个电话会","Can we set up a call with your IT team?","能和你们的 IT 团队约个电话会吗？","",0),
+v("by EOD","","","今天下班前","I'll send it to you by EOD.","我今天下班前发给你。","EOD = end of day。跨时区时最好写明具体时间和时区。",0,"by E O D")
+]},
+
+{ id:'B5', title:'确认与救场', en:'Clarifying & Buying Time', items:[
+v("Sorry, could you say that again?","","","抱歉，能再说一遍吗？","Sorry, could you say that again a bit more slowly?","抱歉，能再说一遍、稍微慢一点吗？","没听懂就问，不丢人。",1),
+v("Sorry, I didn't catch that.","","","抱歉，我没听清。","Sorry, I didn't catch the last part.","抱歉，最后那部分我没听清。","",1),
+v("Just to clarify,…","","","澄清一下，……","Just to clarify, do you need this for all vehicles or only the buses?","澄清一下，是所有车都需要，还是只有公交车需要？","",1),
+v("If I understand correctly,…","","","如果我理解没错的话，……","If I understand correctly, the main issue is the delay in video upload.","如果我理解没错，主要问题是视频上传延迟。","复述确认，防止需求理解偏差。",1),
+v("What do you mean by…?","","","你说的……是指什么？","What do you mean by “real-time” — seconds or minutes?","你说的“实时”是指几秒内，还是几分钟内？","PM 必备：把模糊的需求问到可以量化。",1),
+v("Let me double-check","","","我再核实一下","Let me double-check with our engineers and confirm.","我和工程师再核实一下，然后给你确认。","",1),
+v("That's a good question.","","","好问题。（顺便争取思考时间）","That's a good question — let me think about it for a second.","好问题——让我想一下。","",0),
+v("Let me put it another way.","","","我换个说法。","Let me put it another way: the camera only uploads video when something happens.","我换个说法：只有发生事件时，摄像头才上传视频。","",0),
+v("Could you put that in writing?","","","能书面发一下吗？","Could you put that in writing so I can share it with the team?","能书面发一下吗？我好转给团队。","",0)
+]},
+
+{ id:'B6', title:'回应与谈判', en:'Responding & Negotiating', items:[
+v("That's a fair point.","","","你说得有道理。","That's a fair point — false alarms do waste a lot of time.","你说得有道理——误报确实很浪费时间。","",1),
+v("I see where you're coming from.","","","我理解你的出发点。","I see where you're coming from, but adding more cameras also adds cost.","我理解你的出发点，但多加摄像头也会增加成本。","先认同，再转折。",0),
+v("I'm afraid…","","","恐怕……（委婉地说“不”）","I'm afraid we can't deliver that by March.","恐怕我们三月前交付不了。","",1),
+v("The good news is…","","","好消息是……","The good news is that it only needs a configuration change.","好消息是，这只需要改一下配置。","",1),
+v("What if we…?","","","如果我们……怎么样？","What if we start with 50 vehicles and expand later?","如果我们先从 50 辆车开始，之后再扩大，怎么样？","提方案、找折中的好句型。",1),
+v("meet halfway","","","各让一步","Could we meet halfway on the price?","价格上我们各让一步好吗？","",0),
+v("ballpark figure","","","大概的数字","Can you give me a ballpark figure?","能给我个大概数吗？","",0),
+v("That works for us.","","","我们可以接受。","A two-week pilot works for us.","两周的试点我们可以接受。","",1),
+v("deal-breaker","","","决定性否决因素（没它就不合作）","Is the lack of SSO a deal-breaker for you?","没有单点登录，会让你们直接放弃合作吗？","",0)
+]}
+]},
+
+{ id:'C', title:'高频搭配', en:'Collocations', desc:'动词 + 名词的固定搭配。单词都认识，但不知道该配哪个动词，是中式英语最常见的来源。', subs:[
+
+{ id:'C1', title:'设备与安装', en:'Devices', items:[
+v("mount a camera","","","安装（固定）摄像头","Mount the camera behind the rear-view mirror.","把摄像头装在后视镜后方。","",0),
+v("calibrate the camera","","","标定摄像头","You need to calibrate the camera after replacing the windshield.","更换挡风玻璃后需要重新标定摄像头。","",1),
+v("push a firmware update","","","推送固件升级","We'll push a firmware update tonight.","我们今晚会推送一次固件升级。","",1),
+v("configure the parameters","","","配置参数","You can configure the parameters remotely.","参数可以远程配置。","",0),
+v("reboot the device","","","重启设备","Have you tried rebooting the device?","你试过重启设备吗？","",0),
+v("pull the logs","","","拉取日志","We pulled the logs from the device remotely.","我们远程从设备上拉取了日志。","",0)
+]},
+
+{ id:'C2', title:'事件与 AI', en:'Events & AI', items:[
+v("trigger an alert","","","触发告警","Phone use triggers an in-cab alert.","使用手机会触发车内告警。","",1),
+v("detect fatigue","","","识别疲劳","The camera can detect fatigue even at night.","摄像头在夜间也能识别疲劳。","",0),
+v("lower the threshold","","","调低阈值","We lowered the threshold for night driving.","我们调低了夜间驾驶的阈值。","反义：raise the threshold。",0),
+v("reduce false alarms","","","减少误报","Our top priority this quarter is to reduce false alarms.","本季度我们的首要任务是减少误报。","",1),
+v("review an event","","","审核事件","Managers review each event and decide what to do next.","管理者审核每个事件，并决定下一步怎么做。","",0),
+v("dismiss an event","","","忽略事件","If the video shows nothing wrong, just dismiss the event.","如果视频显示没问题，直接忽略这个事件就行。","",0),
+v("retrieve footage","","","调取录像","You can retrieve footage from the device remotely.","你可以从设备上远程调取录像。","",0),
+v("coach a driver","","","辅导司机","The manager coached the driver using the event video.","管理者用事件视频辅导了这位司机。","",1),
+v("file a claim","","","提出索赔","The video helped them file a claim within a day.","有了视频，他们一天之内就提交了索赔。","",0)
+]},
+
+{ id:'C3', title:'平台操作', en:'Platform', items:[
+v("set up a geofence","","","设置电子围栏","Let's set up a geofence around the warehouse.","我们在仓库周围设一个电子围栏。","",0),
+v("generate a report","","","生成报表","The system generates a weekly safety report.","系统每周生成一份安全报表。","",1),
+v("grant access","","","授予权限","Only admins can grant access to the original video.","只有管理员可以授予查看原始视频的权限。","",0),
+v("assign a task","","","分配任务","You can assign a coaching task with one click.","你可以一键分配辅导任务。","",0)
+]},
+
+{ id:'C4', title:'项目与需求', en:'Projects & Requirements', items:[
+v("gather requirements","","","收集需求","We're visiting customers in Brazil to gather requirements.","我们正在拜访巴西客户收集需求。","",1),
+v("collect feedback","","","收集反馈","We collect feedback from pilot customers every two weeks.","我们每两周收集一次试点客户的反馈。","",1),
+v("submit a feature request","","","提交功能需求","You can submit a feature request through your account manager.","你可以通过客户经理提交功能需求。","",0),
+v("set priorities","","","确定优先级","We set priorities together with the sales team.","我们和销售团队一起确定优先级。","",0),
+v("meet a deadline","","","按时完成","We're on track to meet the deadline.","我们按计划能按时完成。","反义：miss a deadline。on track = 进展正常。",1),
+v("ship a feature","","","发布功能","We shipped the new dashboard last week.","我们上周发布了新的仪表盘。","ship 在软件行业 = 发布上线。",0),
+v("fix a bug","","","修复 bug","The bug was fixed in version 2.3.","这个 bug 在 2.3 版本中修复了。","",0),
+v("run a pilot","","","开展试点","We're running a pilot with a bus operator in Mexico City.","我们正在和墨西哥城的一家公交运营商做试点。","",1),
+v("roll out to the whole fleet","","","推广到全车队","After the pilot, they plan to roll out to the whole fleet.","试点之后，他们计划推广到全车队。","",0)
+]},
+
+{ id:'C5', title:'商务', en:'Business', items:[
+v("send a quote","","","发报价","I'll send you a quote by Friday.","我周五前把报价发给你。","",1),
+v("sign a contract","","","签合同","They signed a three-year contract last month.","他们上个月签了一份三年的合同。","续约：renew a contract。",0),
+v("close a deal","","","成交","We closed the deal after a three-month pilot.","经过三个月试点后，我们成交了。","",0),
+v("win a tender","","","中标","We won the tender for 2,000 school buses.","我们中标了 2000 辆校车的项目。","",0),
+v("negotiate the price","","","谈价格","They want to negotiate the price for the second year.","他们想谈第二年的价格。","negotiate 读 /nɪˈɡoʊʃieɪt/。",0)
+]}
+]}
+];
+
+/* ---------------- 渲染 ---------------- */
+const LS_DONE='vt-english-mastered-v1', LS_PREF='vt-english-pref-v1';
+const done=new Set(JSON.parse(localStorage.getItem(LS_DONE)||'[]'));
+const pref=Object.assign({accent:'en-US',rate:'0.95'},JSON.parse(localStorage.getItem(LS_PREF)||'{}'));
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const slug=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const sayOf=it=>it.s||it.w.replace(/\s*\/\s*/g,', ').replace(/[…]/g,'').replace(/\(([^)]*)\)/g,'$1');
+const SPK='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>';
+const CHK='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>';
+
+let html='', toc='', total=0, coreTotal=0;
+const seen=new Set();
+DATA.forEach((part,pi)=>{
+  const pc=part.subs.reduce((n,s)=>n+s.items.length,0);
+  toc+=`<a class="part" href="#${part.id}" data-for="${part.id}"><span>${esc(part.title)}</span><span class="n">${pc}</span></a>`;
+  html+=`<section class="part" id="${part.id}" data-part><div class="part-h"><span class="idx">0${pi+1}</span><h2>${esc(part.title)}</h2><span class="en-t">${esc(part.en)}</span></div><p class="part-desc">${esc(part.desc)}</p>`;
+  part.subs.forEach(sub=>{
+    toc+=`<a class="subl" href="#${sub.id}" data-for="${sub.id}"><span>${esc(sub.title)}</span><span class="n">${sub.items.length}</span></a>`;
+    html+=`<div class="sub" id="${sub.id}" data-sub><h3>${esc(sub.title)}<small>${esc(sub.en)}</small></h3><div class="grid">`;
+    sub.items.forEach(it=>{
+      let id=sub.id+'-'+slug(it.w); while(seen.has(id)) id+='x'; seen.add(id);
+      total++; if(it.c) coreTotal++;
+      const q=[it.w,it.z,it.e,it.ez,it.n].join(' ').toLowerCase();
+      html+=`<article class="card${it.c?' core':''}${done.has(id)?' done':''}" data-id="${id}" data-q="${esc(q)}">
+        <div class="head">
+          <span class="w en">${esc(it.w)}</span>
+          <button class="spk" data-say="${esc(sayOf(it))}" aria-label="朗读 ${esc(it.w)}">${SPK}</button>
+          ${it.p?`<span class="ipa">${esc(it.p)}</span>`:''}
+          ${it.t?`<span class="pos">${esc(it.t)}</span>`:''}
+          ${it.c?'<span class="core-b">必背</span>':''}
+        </div>
+        <button class="mk" aria-label="标记为已掌握" aria-pressed="${done.has(id)}">${CHK}</button>
+        <div class="mean zh">${esc(it.z)}</div>
+        <div class="ex">
+          <button class="spk" data-say="${esc(it.e)}" aria-label="朗读例句">${SPK}</button>
+          <div class="ex-body"><p class="ex-en en">${esc(it.e)}</p><p class="ex-zh zh">${esc(it.ez)}</p></div>
+        </div>
+        ${it.n?`<p class="note">${esc(it.n)}</p>`:''}
+      </article>`;
+    });
+    html+='</div></div>';
+  });
+  html+='</section>';
+});
+document.getElementById('main').innerHTML=html;
+document.getElementById('toc').innerHTML=toc;
+
+const cards=[...document.querySelectorAll('.card')];
+const counts=DATA.map(p=>[p.title,p.subs.reduce((n,s)=>n+s.items.length,0)]);
+document.getElementById('stats').innerHTML=
+  counts.map(([t,n])=>`<div class="stat"><b>${n}</b><span>${esc(t)}</span></div>`).join('')+
+  `<div class="stat"><b>${coreTotal}</b><span>其中必背</span></div>`+
+  `<div class="stat progress"><b id="pg-n">0 / ${total}</b><span>已掌握</span><div class="bar"><i id="pg-bar"></i></div></div>`;
+
+function saveDone(){localStorage.setItem(LS_DONE,JSON.stringify([...done]))}
+function updateProgress(){
+  const n=cards.filter(c=>done.has(c.dataset.id)).length;
+  document.getElementById('pg-n').textContent=`${n} / ${total}`;
+  document.getElementById('pg-bar').style.width=(n/total*100)+'%';
+}
+
+/* ---------------- 筛选 ---------------- */
+const st={q:'',coreOnly:false,mastery:'all'};
+function apply(){
+  let shown=0;
+  cards.forEach(c=>{
+    const matchesMastery=st.mastery==='all'||(st.mastery==='done'&&c.classList.contains('done'))||(st.mastery==='pending'&&!c.classList.contains('done'));
+    const ok=(!st.q||c.dataset.q.includes(st.q))&&(!st.coreOnly||c.classList.contains('core'))&&matchesMastery;
+    c.hidden=!ok; if(ok) shown++;
+  });
+  document.querySelectorAll('[data-sub]').forEach(s=>{
+    const any=!!s.querySelector('.card:not([hidden])'); s.hidden=!any;
+    const a=document.querySelector(`.toc a[data-for="${s.id}"]`);
+    if(a){a.classList.toggle('dim',!any);a.querySelector('.n').textContent=s.querySelectorAll('.card:not([hidden])').length;}
+  });
+  document.querySelectorAll('[data-part]').forEach(p=>{
+    const n=p.querySelectorAll('.card:not([hidden])').length; p.hidden=!n;
+    const a=document.querySelector(`.toc a[data-for="${p.id}"]`);
+    if(a){a.classList.toggle('dim',!n);a.querySelector('.n').textContent=n;}
+  });
+  const emptyEl=document.getElementById('empty');
+  if(shown===0){
+    emptyEl.textContent=st.mastery==='done'
+      ?'暂时没有已掌握的词条。先点击任意词条右上角的圆圈标记掌握，再使用此筛选。'
+      :'没有匹配的内容，换个关键词试试。';
+  }
+  emptyEl.classList.toggle('show',shown===0);
+  document.getElementById('result').textContent=shown===total?`共 ${total} 条`:`显示 ${shown} / ${total} 条`;
+}
+const qEl=document.getElementById('q');
+qEl.addEventListener('input',()=>{st.q=qEl.value.trim().toLowerCase();apply()});
+document.addEventListener('keydown',e=>{
+  if(e.key==='/'&&document.activeElement!==qEl){e.preventDefault();qEl.focus()}
+  if(e.key==='Escape'&&document.activeElement===qEl){qEl.value='';st.q='';apply();qEl.blur()}
+});
+const coreOnlyBtn=document.getElementById('coreOnly');
+coreOnlyBtn.addEventListener('click',()=>{
+  st.coreOnly=!st.coreOnly;
+  coreOnlyBtn.setAttribute('aria-pressed',String(st.coreOnly));
+  apply();
+});
+const masteryButtons={done:document.getElementById('showDone'),pending:document.getElementById('hideDone')};
+function setMasteryFilter(mode){
+  st.mastery=st.mastery===mode?'all':mode;
+  Object.entries(masteryButtons).forEach(([key,button])=>button.setAttribute('aria-pressed',String(st.mastery===key)));
+  apply();
+}
+masteryButtons.done.addEventListener('click',()=>setMasteryFilter('done'));
+masteryButtons.pending.addEventListener('click',()=>setMasteryFilter('pending'));
+
+/* ---------------- 分段按钮 ---------------- */
+function seg(id,val,on){
+  const g=document.getElementById(id);
+  const set=v=>{g.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===v));on(v)};
+  g.addEventListener('click',e=>{const b=e.target.closest('button');if(b)set(b.dataset.v)});
+  set(val);
+}
+seg('mode','all',v=>{document.body.dataset.mode=v;document.querySelectorAll('.rv').forEach(x=>x.classList.remove('rv'))});
+seg('accent',pref.accent,v=>{pref.accent=v;localStorage.setItem(LS_PREF,JSON.stringify(pref))});
+seg('rate',pref.rate,v=>{pref.rate=v;localStorage.setItem(LS_PREF,JSON.stringify(pref))});
+
+/* ---------------- 朗读 ---------------- */
+const PREFERRED={'en-US':['Samantha','Google US English','Microsoft Aria','Alex','Allison','Ava'],
+                 'en-GB':['Daniel','Google UK English Female','Google UK English Male','Microsoft Sonia','Serena','Kate']};
+let voices=[];
+function loadVoices(){voices=('speechSynthesis' in window)?speechSynthesis.getVoices():[]}
+if('speechSynthesis' in window){loadVoices();speechSynthesis.onvoiceschanged=loadVoices}
+/* macOS 自带的搞怪音色，兜底时跳过 */
+const NOVELTY=/^(Albert|Bad News|Bahh|Bells|Boing|Bubbles|Cellos|Good News|Jester|Organ|Superstar|Trinoids|Whisper|Wobble|Zarvox|Grandma|Grandpa|Junior|Ralph|Fred|Kathy|Nicky)\b/;
+function pickVoice(lang){
+  const pool=voices.filter(v=>v.lang&&v.lang.replace('_','-').toLowerCase()===lang.toLowerCase()&&!NOVELTY.test(v.name));
+  for(const name of PREFERRED[lang]){const v=pool.find(v=>v.name.includes(name));if(v) return v}
+  return pool[0]||voices.find(v=>/^en/i.test(v.lang)&&!NOVELTY.test(v.name))||null;
+}
+let speakingBtn=null;
+function speak(text,btn){
+  if(!('speechSynthesis' in window)){toast('当前浏览器不支持朗读，请用 Chrome 或 Safari 打开');return}
+  speechSynthesis.cancel();
+  if(speakingBtn) speakingBtn.classList.remove('on');
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang=pref.accent; u.rate=parseFloat(pref.rate);
+  const v=pickVoice(pref.accent); if(v) u.voice=v;
+  speakingBtn=btn; btn.classList.add('on');
+  u.onend=u.onerror=()=>btn.classList.remove('on');
+  speechSynthesis.speak(u);
+}
+
+/* ---------------- 点击事件 ---------------- */
+document.getElementById('main').addEventListener('click',e=>{
+  const spk=e.target.closest('.spk');
+  if(spk){speak(spk.dataset.say,spk);return}
+  const mk=e.target.closest('.mk');
+  if(mk){
+    const card=mk.closest('.card'),id=card.dataset.id;
+    if(done.has(id)){done.delete(id);card.classList.remove('done')}else{done.add(id);card.classList.add('done');toast('已标记为掌握')}
+    mk.setAttribute('aria-pressed',done.has(id));
+    saveDone();updateProgress();if(st.mastery!=='all') apply();return;
+  }
+  const mode=document.body.dataset.mode;
+  const blurred=mode==='hide-zh'?e.target.closest('.zh'):mode==='hide-en'?e.target.closest('.en'):null;
+  if(blurred) blurred.classList.toggle('rv');
+});
+
+let tt;
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2500)}
+
+updateProgress();apply();
+</script>
+</body>
+</html>
